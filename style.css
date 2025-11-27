@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+.body{
+    background-color: #abf;
+}
 body, div, ul, nav, header, footer, li, label{
     margin: 0;
     padding: 0;
@@ -10,7 +13,7 @@ header{
     width: 100%;
     height: auto;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #48e;
     align-items: center;
     container-type: inline-size;
     container-name: header;
@@ -25,10 +28,11 @@ header{
     top: 0;
     font-size: 60px;
     font-weight: 600;
+    background-color: transparent;
 }
 .nav{
     display: flex;
-    background-color: #fff;
+    background-color: #48e;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -49,6 +53,7 @@ header{
 }
 .menu__open:checked ~ .nav{
     display: flex;
+    background-color: #fff;
 }
 .nav__list{
     display: flex;
@@ -58,6 +63,10 @@ header{
     list-style: none;
     padding: 0;
     margin: auto;
+    background-color: transparent;
+}
+.nav__item{
+    background-color: transparent;
 }
 
 @container header (min-width:600px){
@@ -84,19 +93,155 @@ header{
 
 
 
-
+.profile{
+    container-name: profile;
+    container-type: inline-size;
+    margin: auto;
+}
 .profile__wrapper{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #fff;
+    background-color:transparent;
+    max-width: 1400px;
+    padding: 20px;
+    margin: auto;
 }
 .profile__img{
     max-width: 100%;
-    width: 750px;
+    width: 620px;
+    height: 100%;
+    object-fit: cover;
+    background-color: #fff;
+    margin: 0;
+        border-radius: 10px 0 0 10px;
+}
+.profile__description{
+    background-color: #fff;
 }
 .profile__img-container{
-    height: 300px;
+    max-height: initial;
+    padding: 0;
     overflow: hidden;
+}.profile__data-container{
+    max-width: 620px;
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 0 9px #002;
 }
+.profile__skills-container{
+    background-color: #fff;
+}
+.profile__skills-container ul{
+    background-color: #fff;
+}
+.profile__data{
+    max-width: 620px;
+    background: #fff;
+    
+}
+.profile__skill{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    max-width: 600px;
+    margin-left: 0;
+    background-color: #fff;
+}
+.profile__skill-name{
+    color: #48e;
+}
+h1{
+    margin-top: 0;
+    font-size: 4rem;
+    text-wrap: balance;
+}
+.load__bar{
+    border: 2px solid #48e;
+    background-color: #fff;
+    border-radius: 8px;
+    color: #fff;
+    padding: 2px ;
+    font-size: 12px;
+    width: 80%;
+    margin: 4px;
+    margin-left:0 ;
+}.load-bar___bar{
+    background-color: #48e;
+    border-radius: 6px;
+    padding: 4px 6px;
+}
+.bar--80{
+    width: 80%;
+}
+.bar--60{
+    width: 60%;
+}
+.bar--70{
+    width: 70%;
+}
+.bar--90{
+    width: 90%;
+}
+/*--------- PROFILE QUERRIES -------*/
 
+@container  profile (min-width:720px){
+    .profile__wrapper{
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+    }
+}
+/*------ PORTAFOLIO SECTION----*/
+
+.portfolio{
+    background-color: #18233F;
+    color: #fff;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    container-name: portfolio;
+    container-type: inline-size;
+}
+.porfolio__project-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1300px;
+    margin: auto;
+    width: 100%;
+    gap: 12px;
+}
+.portfolio-title{
+    font-size: 3rem;
+}
+.portfolio__project{
+    background-image:linear-gradient(to right,#0009, #0004, #000e), url(imagenes_/project-image.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh;
+    display: grid;
+    place-content: center;
+}
+.portfolio__project:hover{
+    opacity: 0.73;
+    outline: 2px solid #fff;
+    outline-offset: -4px;
+}
+.portfolio__project-name{
+
+}
+/*------- PORTFOLIO QUERRYS-----*/
+@container portfolio (min-width: 56.25rem){
+    .porfolio__project-container{
+        grid-template-columns: repeat(auto-fill,minmax(350px, 1fr)) ;
+    }
+    .portfolio__project:first-child{
+        grid-column: span 2;
+    }
+    .portfolio__project:nth-child(6){
+        grid-column: span 3;
+    }
+}
