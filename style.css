@@ -298,13 +298,16 @@ h1{
 
 @container form (min-width:52.25rem){
     .form__form{
-        grid-template-columns: 1fr;
         grid-template-areas: 
         "name lastname"
         "email email"
         "message message"
         "submit submit ";
         gap: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 4px 4px #123;
+        padding: 4px 8px;
+        background-color: #1234;
     }
     .form__input-container:first-child{
         grid-area: name;
@@ -321,4 +324,5 @@ h1{
     .form__input-container:nth-child(5){
         grid-area: submit;
     }
+    
 }
