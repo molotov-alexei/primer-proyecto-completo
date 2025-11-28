@@ -64,6 +64,8 @@ header{
     padding: 0;
     margin: auto;
     background-color: transparent;
+    text-align: center;
+    font-size: 2em;
 }
 .nav__item{
     background-color: transparent;
@@ -230,9 +232,7 @@ h1{
     outline: 2px solid #fff;
     outline-offset: -4px;
 }
-.portfolio__project-name{
 
-}
 /*------- PORTFOLIO QUERRYS-----*/
 @container portfolio (min-width: 56.25rem){
     .porfolio__project-container{
@@ -240,8 +240,85 @@ h1{
     }
     .portfolio__project:first-child{
         grid-column: span 2;
+        grid-row: span 2;
+        grid-auto-flow: dense;
+    }
+    .portfolio__project:nth-child(4){
+        grid-column: span 2;
     }
     .portfolio__project:nth-child(6){
         grid-column: span 3;
+    }
+}
+/*--------FORM SECTION--------*/
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 40px;
+    height: 50vh;
+    margin: auto;   
+    margin-top: 40px;
+    container-name: form;
+    container-type: inline-size;
+
+    }
+    .form__form{
+        width: 100%;
+        max-width: 700px;
+        display: grid;
+
+
+    }
+
+.form__input-container input{
+    width: 100%;
+    padding: 9px 8px;
+    border-radius: 0 0 8px 8px ;
+
+}
+.form__input-container textarea{
+    width: 100%;
+    height: 20vh;
+    border-radius: 0 0 8px 8px ;
+    resize: none;
+}
+.submit{
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #48e;
+    color: #fff;
+}
+/*--------FORM QUERRYS-------*/
+
+@container form (min-width:52.25rem){
+    .form__form{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "name lastname"
+        "email email"
+        "message message"
+        "submit submit ";
+        gap: 15px;
+    }
+    .form__input-container:first-child{
+        grid-area: name;
+    }
+    .form__input-container:nth-child(2) {
+        grid-area: lastname;
+    }
+    .form__input-container:nth-child(3){
+        grid-area: email;
+    }
+    .form__input-container:nth-child(4){
+        grid-area: message;
+    }
+    .form__input-container:nth-child(5){
+        grid-area: submit;
     }
 }
