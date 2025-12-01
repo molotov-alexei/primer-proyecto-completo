@@ -18,6 +18,7 @@ header{
     container-type: inline-size;
     container-name: header;
 }
+
 .header__logo{
     width: 80px;
     padding: 0;
@@ -292,7 +293,7 @@ header{
 
     }
     60%{
-        transform: translateX(40px);
+        transform: translateX(80px);
     }
 
     100%{
@@ -568,6 +569,18 @@ h1{
     min-height: 90vh;
     display: grid;
     place-content: center;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range-start: cover 2%;
+    animation-range-end: contain 10%;
+}
+@keyframes aparecer {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .portfolio__project:hover{
     opacity: 0.73;
