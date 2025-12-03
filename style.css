@@ -33,7 +33,6 @@ header{
 }
 .nav{
     display: flex;
-    background-color: #48e;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -72,7 +71,19 @@ header{
     background-color: transparent;
 }
 
-@container header (min-width:600px){
+@media screen and (min-width:600px){
+    .header{
+        padding: 20px 0;
+        animation: adapt-nav both ;
+        animation-timeline: scroll();
+        animation-range: 40px 100px;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+    .logo{
+        display: none;
+    }
     .nav{
         display: block;
         position: static;
@@ -94,6 +105,19 @@ header{
     }
 }
 
+@keyframes adapt-nav {
+    from{
+        padding: 40px 0;
+        background-color: #48e;
+    }
+    to{
+        padding: 15px 0;
+        background-color: #18233F;
+        height: auto;
+        opacity: .8;
+        color: #fff;
+    }
+}
 
 
 .profile{
@@ -121,9 +145,9 @@ header{
 .img-slide{
     width: 1860px;
     display: flex;
-    animation:imagen 15s infinite;
+    animation:imagen 15s infinite steps(2);
     background-position: center;
-    animation-timing-function: linear;
+    animation-timing-function:linear ;
     animation-direction: alternate;
     object-fit: cover;
     
@@ -163,13 +187,19 @@ header{
     overflow: hidden;
 }
 .profile__skills-container{
-    background-color: #fff;
     width: 620px;
     display: flex;
+    align-items: center;
+    background-color: #401F18;
+    flex-direction: column;
+    justify-content: center;
+
 }
 .profile__skills-container ul{
-    background-color: #fff;
-    width: 100%;
+    background-color: #ff;
+    width: 100%;    
+    background-color: #401F18;
+    padding-left: 20px;
 }
 .profile__data{
     max-width: 620px;
@@ -182,13 +212,13 @@ header{
     margin: 10px;
     max-width: 600px;
     margin-left: 0;
-    background-color: #fff;
+    background-color:     background-color: #401F18;;
 }
 .profile-slide{
     width: 1240px;
     display: flex;
     animation-name: data-alternate;
-    animation-duration: 8s;
+    animation-duration: 4s;
     animation-delay: 5s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
@@ -198,12 +228,15 @@ header{
 .profile-alternate{
     width: 620px;
     padding: 0 20px;
+    background-image: radial-gradient(#30401888, #304018);
+    height: 85vh;
+    padding-top: 40px;
 }
 @keyframes data-alternate {
     from{
         transform: translateX(0);}
     to{
-            transform: translateX(-50%);
+            transform: translateX(-52%);
         }
     
 }
@@ -257,10 +290,10 @@ header{
         box-shadow: 0 0 5px 2px #4ff;
     }   
     50%{
-        transform: translateY(60px);
+        transform: translateY(50px);
     }
     60%{
-        transform: translateX(50px);
+        transform: translateX(20px);
     }
     100%{
         width: 175px;
@@ -268,7 +301,7 @@ header{
         background-image: radial-gradient(transparent, #48e );
         color: #000;
         box-shadow: 0 0 5px 2px #4ff;
-        transform: translateY(0);
+        transform: translateY(50px);
     }
 }
 .radius-70{
@@ -443,7 +476,7 @@ h1{
     background-color: #48e;
     border-radius: 6px;
     padding: 4px 6px;
-    animation-duration: 4s;
+    animation-duration: 7s;
     animation-delay: 1s;
     animation-iteration-count:infinite ;
     animation-fill-mode: both;
@@ -620,6 +653,9 @@ h1{
     margin-top: 40px;
     container-name: form;
     container-type: inline-size;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 20% contain 30%;
 
     }
     .form__form{
