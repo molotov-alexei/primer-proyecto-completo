@@ -58,7 +58,11 @@ input[type=checkbox]{
     border-radius: 50%;
     padding: 6px;
     user-select: none;
-
+}
+.sidebar__img{
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 
@@ -104,13 +108,6 @@ input[type=checkbox]{
     bottom: -18px;
     box-shadow: 4px -4px 0 4px var(--bgcolor);
 }
-
-
-
-
-
-
-
 .sidebar-li a{
     text-decoration: none;
     color: inherit;
@@ -127,4 +124,21 @@ input[type=checkbox]{
     filter: brightness(1);
     filter: contrast(10);
     filter: saturate(4);
+}
+/*-----------checket-----*/
+input[ type="checkbox"]:checked ~ label {
+    color: var(--sidebar-color);
+    background-color: var(--bgcolor);
+}
+.sidebar:has(input[type="checkbox"]:checked){
+    width:fit-content ;
+}
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__img{
+display: none;
+}
+.sidebar:has(input[type="checkbox"]:checked) :is(.sidebar-li a){
+display: none;
+}
+.sidebar:has(input[type="checkbox"]:checked){
+    width: 60px;
 }
